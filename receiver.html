@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Receiver</title>
+</head>
+<body>
+    <h1>Received Stocks</h1>
+    {% if received_stocks %}
+        <ul>
+            {% for key, value in received_stocks.items() %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No stocks received yet.</p>
+    {% endif %}
+</body>
+</html>
+

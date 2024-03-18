@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Sender</title>
+</head>
+<body>
+	{% if message %}
+	{{ message }}
+	{% endif %}
+    <h1>Select a Stock to Send:</h1>
+    <form action="/send_stock" method="POST">
+        <select name="stock">
+            {% for stock in stocks %}
+                <option value="{{ stock }}">{{ stock }}</option>
+            {% endfor %}
+        </select>
+	<input type="number" name="price" id="price">
+        <button type="submit">Send Stock</button>
+    </form>
+</body>
+</html>
